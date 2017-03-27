@@ -65,16 +65,20 @@ h1{
   margin: 50px 100px;
 }
 .textbox{
-  border-radius: .25rem;
+  border-radius: 8px;
   padding: 14px 10px 16px;
   font-size: 1.25rem;
   transition: box-shadow 70ms ease-out,border-color 70ms ease-out;
 }
 .btn{
-  border-radius: .25rem;
+  border-radius: 8px;
+  border: 0px;
+  background: #3ead5d;
   padding: 14px 32px 16px;
   font-size: 1.25rem;
   margin: 10px;
+  color: #fff;
+  shadow: 2px;
 }
 
 .footer{
@@ -102,12 +106,16 @@ input[type=checkbox] ~ label {
   [type=checkbox]:checked ~ label {
       z-index: 2;
   }
-  [type=checkbox]:checked ~ label ~ .menu-content {
+  [type=checkbox]:checked + .menu {
+    color: red;
+  }
+  [type=checkbox]:checked ~ .menu-content {
       z-index: 300;
       opacity: 1;
       height: 100%;
       transition: .5s;
       margin-top: 10px;
+      text-align: center;
   }
   label{
     cursor: pointer;
@@ -126,8 +134,7 @@ input[type=checkbox] ~ label {
   .menu-content{
     opacity: 0;
     height: 0px;
-    display: block;
-    text-align: center;
+    display: block; /* need for opacity and height */
   }
   ul {
     list-style: none;
