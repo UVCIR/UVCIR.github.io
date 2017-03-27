@@ -101,13 +101,11 @@ input[type=checkbox] ~ label {
 }
 @media only screen and (max-width: 640px) {
   input[type=checkbox] ~ label {
-    display: block;
+    display: inline;
+    padding: 10px;
   }
   [type=checkbox]:checked ~ label {
       z-index: 2;
-  }
-  [type=checkbox]:checked + .menu {
-    color: red;
   }
   [type=checkbox]:checked ~ .menu-content {
       z-index: 300;
@@ -124,8 +122,10 @@ input[type=checkbox] ~ label {
     padding: 30px 10px;
     width: 100%;
   }
+  .navbar{
+    text-align: center;
+  }
   .menu {
-    float: right;
     display: block;
   }
   .large-menu{
