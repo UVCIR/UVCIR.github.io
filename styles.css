@@ -4,12 +4,20 @@ body{
   padding: 0;
   color: #fff;
 }
+.menu{
+  display: inline;
+  position: relative;
+}
+.menu-content{
+  display: inline;
+}
 .navbar{
   line-height: 70px;
   display: block;
   background: #333;
   box-shadow: 0 1px 1px rgba(0,0,0,.1);
   padding: 7px 10px;
+  height: 70px;
 }
 .navbar .logo{
   float: left;
@@ -20,6 +28,9 @@ body{
 .copyright{
   display: inline-block;
 }
+.footer-div{
+  padding: 0px 30px;
+}
 a {
     color: #75b4e5;
     text-decoration: none;
@@ -29,6 +40,8 @@ ul {
   float: right;
   display: flex;
   margin: 0px;
+  background: #333;
+  border-radius: 10px;
 }
 li > a {
   margin-left: 8px;
@@ -45,6 +58,8 @@ h1{
 .main .mid{
   padding: 100px 100px;
   text-align: center;
+  width: 60%;
+  margin: auto;
 }
 .desc{
   margin: 50px 100px;
@@ -53,67 +68,67 @@ h1{
   margin: 50px 50px;
 }
 .textbox{
-  border-radius: .25rem;
+  border-radius: 8px;
   padding: 14px 10px 16px;
   font-size: 1.25rem;
   transition: box-shadow 70ms ease-out,border-color 70ms ease-out;
 }
 .btn{
-  border-radius: .25rem;
+  border-radius: 8px;
+  border: 0px;
+  background: #3ead5d;
   padding: 14px 32px 16px;
   font-size: 1.25rem;
   margin: 10px;
+  color: #fff;
 }
 
 .footer{
   bottom: 0px;
   font-size: .75em;
+  line-height: 70px;
   background: #333;
   width: 100%;
-}
-.footer-div {
-  padding: 20px;
-  line-height: 70px;
 }
 
 .footer-div > ul {
   font-size: 2em;
+  line-height: 70px;
 }
-
+input[type=checkbox] {
+  display: none;
+}
+input[type=checkbox] ~ label {
+  display: none;
+}
 @media only screen and (max-width: 640px) {
-  input[type=checkbox] {
-    display: none;
+  input[type=checkbox] ~ label {
+    display: inline;
+    padding: 10px;
   }
   [type=checkbox]:checked ~ label {
       z-index: 2;
   }
-  [type=checkbox]:checked ~ label ~ .menu-content {
-      z-index: 1;
+  [type=checkbox]:checked ~ .menu-content {
+      z-index: 300;
       opacity: 1;
       height: 100%;
-      display: block;
+      transition: .5s;
+      margin-top: 10px;
+      text-align: center;
   }
-
   label{
     cursor: pointer;
-  }
-
-  #close-menu {
-      z-index: -1;
-      top: 0px;
-      color: #333
-  }
-
-  [type=checkbox]:checked ~ label ~ #close-menu {
-      z-index: 3;
   }
   .main .mid{
     padding: 30px 10px;
     width: 100%;
   }
+  .navbar{
+    text-align: center;
+  }
   .menu {
-    float: right;
-    display: flex;
+    display: block;
   }
   .large-menu{
     display: none;
@@ -121,17 +136,16 @@ h1{
   .menu-content{
     opacity: 0;
     height: 0px;
-    display: block;
-    text-align: center;
+    display: block; /* need for opacity and height */
   }
   ul {
     list-style: none;
     float: none;
     display: flex;
     flex-direction: column;
-    padding: 0px;
-    text-align: center;
-    z-index: 90px;
+    padding: 0px 10px;
+    background: #333;
+    border-radius: 10px;
   }
   li > a {
     margin-left: 0px;
@@ -142,8 +156,4 @@ h1{
   footer {
     text-align: center;
   }
-  .navbar{
-    text-align: center;
-  }
-
 }
