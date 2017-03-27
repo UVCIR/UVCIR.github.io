@@ -49,6 +49,9 @@ h1{
 .desc{
   margin: 50px 100px;
 }
+.wider-desc{
+  margin: 50px 50px;
+}
 .textbox{
   border-radius: .25rem;
   padding: 14px 10px 16px;
