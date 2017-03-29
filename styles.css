@@ -43,10 +43,13 @@ ul {
   background: #333;
   border-radius: 10px;
 }
+a:hover {
+  opacity: .8;
+}
 li > a {
   margin-left: 8px;
 }
-.main{
+.wrapper{
   background-image: url(img/background.png);
   background-size: cover;
 }
@@ -55,11 +58,16 @@ h1{
   font-weight: 900;
   margin: 30px;
 }
-.main .mid{
-  padding: 100px 100px;
+.wrapper .mid{
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mid .mid-item {
   width: 60%;
-  margin: auto;
+  flex: none;
+  padding: 30px;
 }
 .desc{
   margin: 50px 100px;
@@ -102,6 +110,9 @@ input[type=checkbox] ~ label {
   display: none;
 }
 @media only screen and (max-width: 640px) {
+  .mid .mid-item {
+    width: 90%;
+  }
   input[type=checkbox] ~ label {
     display: inline;
     padding: 10px;
@@ -119,10 +130,6 @@ input[type=checkbox] ~ label {
   }
   label{
     cursor: pointer;
-  }
-  .main .mid{
-    padding: 30px 10px;
-    width: 100%;
   }
   .navbar{
     text-align: center;
