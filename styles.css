@@ -7,11 +7,9 @@ body{
   background-size: cover;
 }
 .menu{
-  display: inline;
-  position: relative;
-}
-.menu-content{
-  display: inline;
+  display: flex;
+  justify-content: flex-end;
+  position: relative; /* for some reason this makes z-index in front of text*/
 }
 .navbar{
   line-height: 70px;
@@ -22,13 +20,14 @@ body{
   height: 70px;
 }
 .navbar .logo{
-  float: left;
+  margin-right: auto;
 }
 .lg-font{
   font-size: 1.5em;
 }
 .copyright{
-  display: inline-block;
+  font-size: small;
+  margin-right: auto;
   padding: 0px 10px;
 }
 a {
@@ -65,7 +64,7 @@ h1{
   justify-content: center;
 }
 .mid .mid-item {
-  min-height: 700px;
+  min-height: 90vh;
   width: 60%;
   flex: none;
   padding: 30px;
@@ -98,11 +97,15 @@ h1{
   height:70px;
   position: relative;
   background: #333;
-  width: 100%;
   bottom: 0;
 }
+.footer-item {
+  display: flex;
+  justify-content: flex-end;
+}
 
-.footer-div > ul {
+.footer-div > ul { /* ul that is child of footer-div */ 
+  float: none;
   font-size: 2em;
   line-height: 70px;
 }
@@ -113,8 +116,17 @@ input[type=checkbox] ~ label {
   display: none;
 }
 @media only screen and (max-width: 640px) {
+  .navbar { 
+    width: 100vw;
+  }
   .mid .mid-item {
     width: 90%;
+  }
+  .desc{
+    margin: 0 0;
+  }
+  .wider-desc{
+    margin: 0 0;
   }
   input[type=checkbox] ~ label {
     display: inline;
@@ -124,12 +136,12 @@ input[type=checkbox] ~ label {
       z-index: 2;
   }
   [type=checkbox]:checked ~ .menu-content {
-      z-index: 300;
-      opacity: 1;
-      height: 100%;
-      transition: .5s;
-      margin-top: 10px;
-      text-align: center;
+    z-index: 300;
+    opacity: 1;
+    height: 100%;
+    transition: .5s;
+    margin-top: 10px;
+    text-align: center;
   }
   label{
     cursor: pointer;
@@ -157,7 +169,7 @@ input[type=checkbox] ~ label {
     background: #333;
     border-radius: 10px;
   }
-  .footer-div > ul {
+  .footer-div > .footer-item{
     border-radius: 0px;
     width: 100%;
   }
@@ -165,7 +177,7 @@ input[type=checkbox] ~ label {
     margin-left: 0px;
   }
   .copyright{
-    display: block;
+    margin: auto;
   }
   .footer {
     position: relative; /* make sure it doesn't cover up stuff */
