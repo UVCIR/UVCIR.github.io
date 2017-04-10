@@ -78,7 +78,7 @@ h1{
 .textbox{
   border-radius: 8px;
   padding: 14px 10px 16px;
-  font-size: 1.25rem;
+  font-size: 1rem;
   transition: box-shadow 70ms ease-out,border-color 70ms ease-out;
 }
 .btn{
