@@ -6,10 +6,14 @@ body{
   background-image: url(img/background.png);
   background-size: cover;
 }
+
 .menu{
   display: flex;
   justify-content: flex-end;
   position: relative; /* for some reason this makes z-index in front of text*/
+}
+.menu-content{
+  display: flex;
 }
 .navbar{
   line-height: 70px;
@@ -19,7 +23,10 @@ body{
   padding: 7px 10px;
   height: 70px;
 }
-.navbar .logo{
+.logo img {
+  height: 70px;
+}
+.menu-left{
   margin-right: auto;
 }
 .lg-font{
@@ -104,7 +111,7 @@ h1{
   justify-content: flex-end;
 }
 
-.footer-div > ul { /* ul that is child of footer-div */ 
+.footer-div > ul { /* ul that is child of footer-div */
   float: none;
   font-size: 2em;
   line-height: 70px;
@@ -116,7 +123,7 @@ input[type=checkbox] ~ label {
   display: none;
 }
 @media only screen and (max-width: 640px) {
-  .navbar { 
+  .navbar {
     width: 100vw;
   }
   .mid .mid-item {
@@ -129,19 +136,15 @@ input[type=checkbox] ~ label {
     margin: 0 0;
   }
   input[type=checkbox] ~ label {
-    display: inline;
+    display: flex;
     padding: 10px;
   }
   [type=checkbox]:checked ~ label {
       z-index: 2;
   }
-  [type=checkbox]:checked ~ .menu-content {
-    z-index: 300;
-    opacity: 1;
-    height: 100%;
-    transition: .5s;
-    margin-top: 10px;
-    text-align: center;
+  .menu-content {
+    display: none;
+    width: 100%;
   }
   label{
     cursor: pointer;
@@ -150,16 +153,21 @@ input[type=checkbox] ~ label {
     text-align: center;
   }
   .menu {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu-left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: initial;
   }
   .large-menu{
     display: none;
   }
-  .menu-content{
-    opacity: 0;
-    height: 0px;
-    display: block; /* need for opacity and height */
-  }
+
   ul {
     list-style: none;
     float: none;

@@ -5,21 +5,27 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"></link>
     <link href="styles.css" rel="stylesheet" type="text/css"></link>
     <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet"></link>
+    <script
+     src="https://code.jquery.com/jquery-3.2.1.min.js"
+     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+     crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="wrapper">
       <nav class="navbar">
         <div class="menu">
-          <a class="lg-font" href="index.html">UVCIR</a>
-          <input type="checkbox" id="menu-open" name="menu-toggle">
-          <label for="menu-open">
-            <i class="fa fa-bars" aria-hidden="true"></i>
-          </label>
+          <div class="menu-left">
+            <a class="logo lg-font" href="index.html"><img src="img/logo-line.png"></img></a>
+            <input type="checkbox" id="menu-open" name="menu-toggle"></input>
+            <label for="menu-open">
+              <i class="fa fa-bars" aria-hidden="true"></i>
+            </label>
+          </div>
           <div class="menu-content">
             <ul>
-              <li> <a href="index.html"> About </a>
+              <li> <a href="about.html"> About </a>
               <li>  <a href="events.html"> Events </a>
-              <li>  <a href="index.html"> Contact </a>
+              <li>  <a href="contact.html"> Contact </a>
             </ul>
           </div>
         </div>
@@ -33,15 +39,14 @@
       </div>
       <div class="footer">
         <div class="footer-div">
-          <div class="copyright footer-item">
-            © UVCIR 2017
-          </div>
           <ul class="footer-item">
-            <li> <a href="#"> <i class="fa fa-facebook-official"></a></i>
-            <li> <a href="#">  <i class="fa fa-envelope" aria-hidden="true"></i></a>
+            <li class="copyright"> &copy; UVCIR 2017 </li>
+            <li> <a class ="blue" href="https://fb.me/uvcir" target="_blank"> <i class="fa fa-facebook-official"></a></i></li>
+            <li> <a class="blue" href="mailto:uvcoalition@gmail.com">  <i class="fa fa-envelope" aria-hidden="true"></i></a></li>
           </ul>
         </div>
       </div>
     </div>
+    <script src='main.js'></script>
   </body>
 </html>
